@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/' , 'Pages@index');
+Route::get('/about', 'Pages@about');
+
+
 
 Route::get('/manufacturers', 'ManufacturersController@index');
 Route::get('/manufacturers/{manufacturers}', 'ManufacturersController@show');
+
+Route::get('/games' , 'GameController@index');
+Route::get('games/{game}', 'GameController@show');

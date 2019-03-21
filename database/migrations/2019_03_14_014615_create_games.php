@@ -14,14 +14,16 @@ class CreateGames extends Migration
     public function up()
     {
         Schema::create('Games', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->string('Name')->comment('Game Name');
-            $table->Integer('manfacturerId')->default('No Name');
-            $table->Integer('gameTypeId');
-            $table->integer('minPlayers');
-            $table->integer('maxPlayers');
-            $table->integer('minAge');
-            $table->string('maxAge');
+            $table->BigIncrements('id');
+            $table->string('Name', 255)->comment('Game Name');
+            $table->smallInteger('min_age',false, true)->default(1)->comment('minimum player age');
+            $table->smallInteger('max_age',false, true)->nullable()->comment("maximum player age");
+
+            $table->smallInteger('min_player',false,true)->default(1)->comment('minimum player ');
+            $table->smallInteger('max_player',false, true)->nullable()->comment("maximum player ");
+
+            $table->integer('game_type_id',false, true)->default(0)->comment('id from game type');
+            $table->integer('manufacturer_id',false,true)->default(0)->comment('id from manufacturers');
             $table->timestamps();
         });
     }
