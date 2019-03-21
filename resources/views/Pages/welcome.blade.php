@@ -1,17 +1,17 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout');
 
-    <title>Gamers</title>
+@section('title', 'Games | Home');
 
-</head>
-<body>
+@section('messages')
+    <section class="jumbotron">
+        <h1 class="display-4">Hello Admin</h1>
+        <p class="lead">I hope you are having great day!</p>
+    </section>
+@endsection
 
-<main>
-    <h1>My First Blade Page</h1>
-</main>
-
-</body>
-</html>
+@section('content')
+    <section>
+        <h1>Hello</h1>
+        <p>This is the home page content</p>
+    </section>
+@endsection
