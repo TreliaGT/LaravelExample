@@ -1,9 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
 class CreateGames extends Migration
 {
     /**
@@ -13,21 +11,18 @@ class CreateGames extends Migration
      */
     public function up()
     {
-        Schema::create('Games', function (Blueprint $table) {
-            $table->BigIncrements('id');
-            $table->string('Name', 255)->comment('Game Name');
-            $table->smallInteger('min_age',false, true)->default(1)->comment('minimum player age');
-            $table->smallInteger('max_age',false, true)->nullable()->comment("maximum player age");
-
-            $table->smallInteger('min_player',false,true)->default(1)->comment('minimum player ');
-            $table->smallInteger('max_player',false, true)->nullable()->comment("maximum player ");
-
-            $table->integer('game_type_id',false, true)->default(0)->comment('id from game type');
-            $table->integer('manufacturer_id',false,true)->default(0)->comment('id from manufacturers');
+        Schema::create('games', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name',255)->comment('Title of the game');
+            $table->unsignedSmallInteger('min_age',false,true)->default(1)->comment('Minimum player age');
+            $table->unsignedSmallInteger('max_age',false,true)->nullable()->comment('Maximum player age');
+            $table->unsignedSmallInteger('min_players',false,true)->default(1)->comment('Minimum player age');
+            $table->unsignedSmallInteger('max_players',false,true)->nullable()->comment('Maximum player age');
+            $table->bigInteger('game_type_id',false, true)->default(0)->comment('ID from Game Types Table');
+            $table->bigInteger('manufacturer_id',false, true)->default(0)->comment('ID from Manufacturers Table');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -35,6 +30,6 @@ class CreateGames extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Games');
+        Schema::dropIfExists('games');
     }
 }

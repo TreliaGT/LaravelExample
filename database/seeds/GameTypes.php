@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-class GameTypeSeeder extends Seeder
+class GameTypes extends Seeder
 {
     /**
      * Run the database seeds.
@@ -9,6 +9,7 @@ class GameTypeSeeder extends Seeder
      */
     public function run()
     {
+        //
         DB::table('game_types')->insert([
             'name' => 'Board',
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
