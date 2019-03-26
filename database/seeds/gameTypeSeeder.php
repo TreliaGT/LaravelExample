@@ -9,32 +9,32 @@ class GameTypeSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('game_types')->insert([
+        DB::table('gameTypes')->insert([
             'name' => 'Board',
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
         ]);
-        DB::table('game_types')->insert([
+        DB::table('gameTypes')->insert([
             'name' => 'Dice',
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
         ]);
-        DB::table('game_types')->insert([
+        DB::table('gameTypes')->insert([
             'name' => 'Sport',
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
         ]);
-        DB::table('game_types')->insert([
+        DB::table('gameTypes')->insert([
             'name' => 'Video',
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
         ]);
-        DB::table('game_types')->insert([
+        DB::table('gameTypes')->insert([
             'name' => 'Card',
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
         ]);
-        DB::table('game_types')->insert([
+        DB::table('gameTypes')->insert([
             'name' => 'Other',
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP'),

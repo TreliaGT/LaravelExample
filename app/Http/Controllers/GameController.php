@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Khsing\World\World;
 use App\create_gametable;
 use Illuminate\Http\Request;
 
@@ -15,8 +15,25 @@ class GameController extends Controller
     public function index()
     {
         //
+        $games = create_gametable::all();
+        // dd($games);
+        return view(
+            'games.index', /* the view to see */
+            compact('games') /* send the $games */
+        );
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\create_gametable  $game
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $games = create_gametable::findOrFail($id);
+        return view('games.show', compact('games'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -26,59 +43,45 @@ class GameController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(request $request)
     {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\create_gametable  $create_gametable
-     * @return \Illuminate\Http\Response
-     */
-    public function show(create_gametable $create_gametable)
-    {
-        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\create_gametable  $create_gametable
+     * @param  \App\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function edit(create_gametable $create_gametable)
+    public function edit(Game $game)
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\create_gametable  $create_gametable
+     * @param  \App\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, create_gametable $create_gametable)
+    public function update(Request $request, Game $game)
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\create_gametable  $create_gametable
+     * @param  \App\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function destroy(create_gametable $create_gametable)
+    public function destroy(Game $game)
     {
         //
     }

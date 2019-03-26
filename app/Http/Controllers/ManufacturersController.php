@@ -30,6 +30,7 @@ class ManufacturersController extends Controller
         $countries = World::Countries();
         return view('manufacturers.create', compact('countries'));
     }
+
     /**
      * Store a newly created resource in storage.
      *
