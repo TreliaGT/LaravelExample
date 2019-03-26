@@ -13,7 +13,7 @@
             @foreach($games as $aGame)
                 <li class="row">
                     <b class="col-1">{{ $aGame->id }}</b>
-                    <span class="col">{{ $aGame->game_name }}</span>
+                    <span class="col">{{ $aGame->name }}</span>
                     <a href="/games/{{ $aGame->id }}" class="col">Details</a></li>
             @endforeach
         </ul>

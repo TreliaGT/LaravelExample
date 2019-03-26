@@ -19,7 +19,7 @@
             </tr>
             <tr>
                 <th scope="row">Name</th>
-                <td>{{ $game->game_name }} </td>
+                <td>{{ $game->name }} </td>
             </tr>
             <tr>
                 <th scope="row">Manufacturer Id</th>

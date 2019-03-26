@@ -19,5 +19,5 @@ Route::get('/contact', 'Pages@contact');
 Route::get('/manufacturers', 'ManufacturersController@index');
 Route::get('/manufacturers/{manufacturers}', 'ManufacturersController@show');
 
-Route::get('/games' , 'GamesController.php@index');
-Route::get('games/{game}', 'GamesController.php@show');
+Route::get('/games' , 'GamesController@index');
+Route::get('games/{game}', 'GamesController@show');

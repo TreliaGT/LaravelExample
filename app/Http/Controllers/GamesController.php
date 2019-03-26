@@ -14,11 +14,11 @@ class GamesController extends Controller
     public function index()
     {
         //
-        $game = Game::all();
+        $games = Game::all();
         // dd($games);
         return view(
             'games.index', /* the view to see */
-            compact('game') /* send the $games */
+            compact('games') /* send the $games */
         );
     }
 
@@ -28,9 +28,10 @@ class GamesController extends Controller
      * @param  \App\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function show(Game $game)
+    public function show($id)
     {
-
+        $game = Game::findOrFail($id);
+        return view('games.show', compact('game'));
     }
     /**
      * Show the form for creating a new resource.
