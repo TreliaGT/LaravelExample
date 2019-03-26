@@ -28,10 +28,9 @@ class GamesController extends Controller
      * @param  \App\game  $game
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Game $games)
     {
-        $games = Game::findOrFail($id);
-        return view('games.show', compact('games'));
+
     }
     /**
      * Show the form for creating a new resource.
