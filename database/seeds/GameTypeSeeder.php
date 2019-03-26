@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-class GameTypeSeeder extends Seeder
+class gameTypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.

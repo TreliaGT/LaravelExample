@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class game extends Model
+class Game extends Model
 {
-    public function manufacturer() {
+    public function Manufacturer() {
         return $this->belongsTo(Manufacturer::class);
     }
-    public function gameType(){
-        return $this->hasOne(GameType::class);
+    public function GameTypes(){
+        return $this->hasOne(gameTypes::class);
     } //
 }

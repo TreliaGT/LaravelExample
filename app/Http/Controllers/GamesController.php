@@ -14,21 +14,21 @@ class GamesController extends Controller
     public function index()
     {
         //
-        $games = Game::all();
+        $game = Game::all();
         // dd($games);
         return view(
             'games.index', /* the view to see */
-            compact('games') /* send the $games */
+            compact('game') /* send the $games */
         );
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\game  $game
+     * @param  \App\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function show(Game $games)
+    public function show(Game $game)
     {
 
     }
