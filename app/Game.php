@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class create_gametable extends Model
+class game extends Model
 {
     public function manufacturer() {
         return $this->belongsTo(Manufacturer::class);

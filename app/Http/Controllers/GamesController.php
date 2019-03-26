@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Khsing\World\World;
-use App\create_gametable;
+use App\Game;
 use Illuminate\Http\Request;
 
-class GameController extends Controller
+class GamesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class GameController extends Controller
     public function index()
     {
         //
-        $games = create_gametable::all();
+        $games = Game::all();
         // dd($games);
         return view(
             'games.index', /* the view to see */
@@ -26,12 +25,12 @@ class GameController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\create_gametable  $game
+     * @param  \App\game  $game
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $games = create_gametable::findOrFail($id);
+        $games = Game::findOrFail($id);
         return view('games.show', compact('games'));
     }
     /**

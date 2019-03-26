@@ -13,7 +13,7 @@ class GamesSeeder extends Seeder
         DB::table('games')->insert([
             'name' => 'Killer Bunnies',
             'manufacturer_id' => 5,
-            'game_type_id' => 3,
+            'gameTypes_id' => 3,
             'min_age' => 12,
             'max_age' => null,
             'min_players' => 2,

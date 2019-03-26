@@ -18,7 +18,7 @@ class CreateGames extends Migration
             $table->unsignedSmallInteger('max_age',false,true)->nullable()->comment('Maximum player age');
             $table->unsignedSmallInteger('min_players',false,true)->default(1)->comment('Minimum player age');
             $table->unsignedSmallInteger('max_players',false,true)->nullable()->comment('Maximum player age');
-            $table->bigInteger('game_type_id',false, true)->default(0)->comment('ID from Game Types Table');
+            $table->bigInteger('gameTypes_id',false, true)->default(0)->comment('ID from Game Types Table');
             $table->bigInteger('manufacturer_id',false, true)->default(0)->comment('ID from Manufacturers Table');
             $table->timestamps();
         });
