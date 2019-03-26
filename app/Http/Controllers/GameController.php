@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\create_gametable;
 use Illuminate\Http\Request;
 
-class CreateGametableController extends Controller
+class GameController extends Controller
 {
     /**
      * Display a listing of the resource.

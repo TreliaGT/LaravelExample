@@ -1,24 +1,23 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gamers | Manufacturers</title>
-</head>
-<body>
-<header>
-    <p>Gamers</p>
-</header>
-<main>
-    <h1>Manufacturers</h1>
-    <p>Paragraph</p>
-    <ul>
-        @foreach($manufacturers as $manufacturer)
-            <li><b>{{ $manufacturer->id}}</b> {{$manufacturer->name}}</li>
-        @endforeach
-    </ul>
-</main>
-</body>
+@extends('layout');
 
-</html>
+@section('title', 'Gamers | Manufacturers')
+
+@section('messages')
+@endsection
+
+@section('content')
+    <header>
+        <h1>Manufacturers</h1>
+    </header>
+    <section>
+        <ul class="list-unstyled">
+            @foreach($manufacturers as $aMaker)
+                <li class="row">
+                    <b class="col-1">{{ $aMaker->id }}</b>
+                    <span class="col">{{ $aMaker->name }}</span>
+                    <a href="/manufacturers/{{ $aMaker->id }}" class="col">Details</a>
+                </li>
+            @endforeach
+        </ul>
+    </section>
+@endsection
