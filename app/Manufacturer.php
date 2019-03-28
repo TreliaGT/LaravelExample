@@ -6,6 +6,6 @@ class Manufacturer extends Model
 {
     // a manufacturer has (zero or more) games
     public function Games() {
-        return $this->hasMany(Game::class);
+        return $this->hasMany(games::class);
     }
 }
