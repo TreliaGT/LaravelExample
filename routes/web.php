@@ -15,9 +15,11 @@ Route::get('/' , 'Pages@index');
 Route::get('/about', 'Pages@about');
 Route::get('/contact', 'Pages@contact');
 
+Route::get('/layout', function(){return view('layout');});
 
 Route::get('/manufacturers', 'ManufacturersController@index');
 Route::get('/manufacturers/{manufacturers}', 'ManufacturersController@show');
+Route::get('/manufacturers/create', 'ManufacturersController@create');
 
 Route::get('/games' , 'GamesController@index');
 Route::get('games/{game}', 'GamesController@show');
