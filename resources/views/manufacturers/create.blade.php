@@ -13,6 +13,7 @@
     </header>
     <section>
         <form action="/manufacturers" method="post" name="addManufacturers">
+            {{csrf_field()}}
             <div class="form-group">
                 <labal for="name">Name</labal>
                 <input type="text" class="form-control" name="name" id="name" placeholder="Enter manufacturer's name">
